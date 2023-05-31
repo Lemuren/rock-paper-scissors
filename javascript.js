@@ -53,6 +53,8 @@ function game() {
         console.log('You won the game!');
     else if (computerWins > playerWins)
         console.log('You lost the game!');
+    else
+        console.log('The game is a draw!');
 }
 
 game();
