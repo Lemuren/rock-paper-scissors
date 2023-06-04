@@ -28,28 +28,28 @@ function playRound(playerChoice) {
 
     if (playerChoice == 'rock' && computerChoice == 'scissors') {
         outcomePar.textContent = 'You win! Rock beats Scissors!'
-        playerScore++;
+        setPlayerScore(playerScore + 1);
     }
     if (playerChoice == 'paper' && computerChoice == 'rock') {
         outcomePar.textContent = 'You win! Paper beats Rock!'
-        playerScore++;
+        setPlayerScore(playerScore + 1);
     }
     if (playerChoice == 'scissors' && computerChoice == 'paper') {
         outcomePar.textContent = 'You win! Scissors beats Paper!'
-        playerScore++;
+        setPlayerScore(playerScore + 1);
     }
 
     if (playerChoice == 'rock' && computerChoice == 'paper') {
         outcomePar.textContent = 'You lose! Paper beats rock!';
-        computerScore++;
+        setComputerScore(computerScore + 1);
     }
     if (playerChoice == 'paper' && computerChoice == 'scissors') {
         outcomePar.textContent = 'You lose! Scissors beats paper!';
-        computerScore++;
+        setComputerScore(computerScore + 1);
     }
     if (playerChoice == 'scissors' && computerChoice == 'rock') {
         outcomePar.textContent = 'You lose! Rock beats scissors!';
-        computerScore++;
+        setComputerScore(computerScore + 1);
     }
 
     if (playerChoice == computerChoice) {
@@ -89,8 +89,8 @@ function endGame() {
 
 
 function resetGame() {
-    computerScore = 0;
-    playerScore = 0;
+    setComputerScore(0);
+    setPlayerScore(0);
     
     const winnerArea = document.querySelector('.winner-box');
     const playArea = document.querySelector('#outcome');
@@ -101,4 +101,14 @@ function resetGame() {
         winnerArea.removeChild(winnerArea.lastChild);
     for (let button of buttons)
         button.disabled = false;
+}
+
+function setPlayerScore(score) {
+    playerScore = score;
+    document.querySelector('#playerScore').textContent = `Score: ${playerScore}`;
+}
+
+function setComputerScore(score) {
+    computerScore = score;
+    document.querySelector('#computerScore').textContent = `Score: ${computerScore}`;
 }

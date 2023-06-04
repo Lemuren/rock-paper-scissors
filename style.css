@@ -38,10 +38,11 @@ body {
 }
 
 .playarea {
+    display: flex;
     min-height: 100px;
     background-color: #5F073B;
     padding: 12px;
-    margin: 12px;
+    margin: 0 12px 12px 12px;
 
     border-style: double;
     border-color: #EADC15;
@@ -63,10 +64,26 @@ body {
     margin: 12px;
 }
 
-.playarea {
+.scores {
     display: flex;
-    padding: 24px;
+    justify-content: space-between;
 }
+
+.scores div {
+    font-size: 17px;
+    background-color: #8f571d;
+    padding: 6px;
+    margin: 0 35px;
+
+    border-color: #d4a22b;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
 
 .playarea #computerChoice,
 .playarea #playerChoice {
