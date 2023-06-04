@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
         <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
         <title>Page Title</title>
-        <script src="javascript.js"></script>
     </head>
 
     <body>
+        <div class="container">
+            <div class="winner-box">
+                <!-- This is filled by the JavaScript -->
+            </div>
+
+            <div class="scores">
+                <div id="playerScore">Score: 0</div>
+                <div id="computerScore">Score: 0</div>
+            </div>
+
+            <div class="playarea">
+                <img id="playerChoice" src="img/nochoice.gif" />
+                <p id="outcome"></p>
+                <img id="computerChoice" src="img/nochoice.gif" />
+            </div>
+
+            <div class="buttons">
+                <button id="rock">
+                    <img src="img/rock.gif" />
+                </button>
+
+                <button id="paper">
+                    <img src="img/paper.gif" />
+                </button>
+
+                <button id="scissors">
+                    <img src="img/scissors.gif" />
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="javascript.js"></script>
     </body>
 </html>
 

@@ -1,0 +1,126 @@
+body {
+    background-color: #222222;
+    margin: 0;
+    font-family: "Press Start 2P";
+    color: white;
+}
+
+
+
+.container {
+    width: 800px;
+    margin: auto;
+    padding: 64px;
+    
+    background: #222222;
+}
+
+.winner-box {
+    display: flex;
+
+    min-height: 134px;
+    padding: 24px;
+    margin: 12px;
+}
+
+.winner-box p {
+    padding: 0 72px;
+    font-size: 32px;
+    flex: 1;
+    margin: auto 0;
+}
+
+.winner-box button {
+    flex: 0;
+    background-color: #e2ce1d;
+    border: none;
+    border-radius: 12px;
+}
+
+.playarea {
+    display: flex;
+    min-height: 100px;
+    background-color: #5F073B;
+    padding: 12px;
+    margin: 0 12px 12px 12px;
+
+    border-style: double;
+    border-color: #EADC15;
+    border-width: 8px;
+    border-radius: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+    border-style: double;
+    border-color: #EADC15;
+    border-width: 8px;
+    border-radius: 8px;
+    background-color: #5F073B;
+
+    padding: 12px;
+    margin: 12px;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scores div {
+    font-size: 17px;
+    background-color: #8f571d;
+    padding: 6px;
+    margin: 0 35px;
+
+    border-color: #d4a22b;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+.playarea #computerChoice,
+.playarea #playerChoice {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    background-color: #E7C118;
+    padding: 16px;
+    border-radius: 32px;
+    border-width: 0px;
+}
+.playarea #outcome {
+    flex-grow: 1;
+    text-align: center;
+
+    margin: auto auto auto auto;
+}
+
+.buttons button {
+    width: 150px;
+    height: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    padding: 12px;
+    margin: 12px;
+
+    background-color: #C8CA03;
+    border-color: #EADC15;
+    border-radius: 5px;
+}
+
+img {
+    width: 128px;
+    height: 128px;
+}
+
+button p {
+    margin: 0;
+}
