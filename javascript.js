@@ -1,3 +1,7 @@
+let playerScore = 0;
+let computerScore = 0;
+const outcomePar = document.querySelector('#outcome');
+
 
 // Play a round when a button is clicked, with the appropriate player choice.
 for (let button of document.querySelectorAll('button')) {
@@ -15,19 +19,39 @@ function getComputerChoice() {
 function playRound(playerChoice) {
     let computerChoice = getComputerChoice();
 
-    if (playerChoice == 'rock' && computerChoice == 'scissors')
-        return 'You win! Rock beats scissors!';
-    if (playerChoice == 'paper' && computerChoice == 'rock')
-        return 'You win! Paper beats rock!';
-    if (playerChoice == 'scissors' && computerChoice == 'paper')
-        return 'You win! Scissors beats paper!';
+    // Set player and computer choice images.
+    const playerChoiceImage   = document.querySelector('#playerChoice');
+    const computerChoiceImage = document.querySelector('#computerChoice');
+    playerChoiceImage.src = `img/${playerChoice}.gif`
+    computerChoiceImage.src = `img/${computerChoice}.gif`
 
-    if (playerChoice == 'rock' && computerChoice == 'paper')
-        return 'You lose! Paper beats rock!';
-    if (playerChoice == 'paper' && computerChoice == 'scissors')
-        return 'You lose! Scissors beats paper!';
-    if (playerChoice == 'scissors' && computerChoice == 'rock')
-        return 'You lose! Rock beats scissors!';
+    if (playerChoice == 'rock' && computerChoice == 'scissors') {
+        outcomePar.textContent = 'You win! Rock beats Scissors!'
+        playerScore++;
+    }
+    if (playerChoice == 'paper' && computerChoice == 'rock') {
+        outcomePar.textContent = 'You win! Paper beats Rock!'
+        playerScore++;
+    }
+    if (playerChoice == 'scissors' && computerChoice == 'paper') {
+        outcomePar.textContent = 'You win! Scissors beats Paper!'
+        playerScore++;
+    }
 
-    return 'Draw!';
+    if (playerChoice == 'rock' && computerChoice == 'paper') {
+        outcomePar.textContent = 'You lose! Paper beats rock!';
+        computerScore++;
+    }
+    if (playerChoice == 'paper' && computerChoice == 'scissors') {
+        outcomePar.textContent = 'You lose! Scissors beats paper!';
+        computerScore++;
+    }
+    if (playerChoice == 'scissors' && computerChoice == 'rock') {
+        outcomePar.textContent = 'You lose! Rock beats scissors!';
+        computerScore++;
+    }
+
+    if (playerChoice == computerChoice) {
+        outcomePar.textContent = 'It\'s a draw!';
+    }
 }

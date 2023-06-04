@@ -35,8 +35,11 @@
     flex-grow: 0;
     flex-shrink: 0;
 }
-.playarea #animationArea {
+.playarea #outcome {
     flex-grow: 1;
+    text-align: center;
+
+    margin: auto auto auto auto;
 }
 
 button {
