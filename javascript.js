@@ -1,3 +1,9 @@
+
+// Play a round when a button is clicked, with the appropriate player choice.
+for (let button of document.querySelectorAll('button')) {
+    button.addEventListener('click', () => playRound(button.id));
+}
+
 function getComputerChoice() {
     let r = Math.random() * 3;
     if (r < 1) return "rock";
@@ -5,17 +11,8 @@ function getComputerChoice() {
     if (r < 3) return "scissors";
 }
 
-function getPlayerSelection() {
-    let choice = prompt("Enter choice: ");
-    if (choice.toLowerCase() == 'rock') return 'rock';
-    if (choice.toLowerCase() == 'paper') return 'paper';
-    if (choice.toLowerCase() == 'scissors') return 'scissors';
 
-    return playerSelection();
-}
-
-function playRound() {
-    let playerChoice = getPlayerSelection();
+function playRound(playerChoice) {
     let computerChoice = getComputerChoice();
 
     if (playerChoice == 'rock' && computerChoice == 'scissors')
@@ -34,27 +31,3 @@ function playRound() {
 
     return 'Draw!';
 }
-
-
-function game() {
-    let computerWins = 0;
-    let playerWins = 0;
-
-    for (let i = 0; i < 5; i++) {
-        let str = playRound();
-        console.log(str);
-        if (str.substring(0, 7) == 'You win')
-            playerWins++;
-        else if (str.substring(0, 8) == 'You lose')
-            computerWins++;
-    }
-
-    if (playerWins > computerWins)
-        console.log('You won the game!');
-    else if (computerWins > playerWins)
-        console.log('You lost the game!');
-    else
-        console.log('The game is a draw!');
-}
-
-game();
