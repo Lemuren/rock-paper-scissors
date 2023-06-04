@@ -1,6 +1,7 @@
 .container {
     width: 800px;
     margin: auto;
+    padding: 64px;
     
     background: red;
 }
@@ -8,6 +9,7 @@
 .winner-box {
     min-height: 100px;
     background: green;
+    padding: 24px;
 }
 
 .playarea {
@@ -19,6 +21,22 @@
     display: flex;
     justify-content: space-evenly;
     background: blue;
+
+    padding: 24px;
+}
+
+.playarea {
+    display: flex;
+    padding: 24px;
+}
+
+.playarea #computerChoice,
+.playarea #playerChoice {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.playarea #animationArea {
+    flex-grow: 1;
 }
 
 button {
@@ -31,7 +49,7 @@ button {
     margin: 12px;
 }
 
-button img {
+img {
     width: 128px;
     height: 128px;
 }
