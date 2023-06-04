@@ -22,7 +22,14 @@ body {
 
 .playarea {
     min-height: 100px;
-    background: yellow;
+    background-color: #5F073B;
+    padding: 12px;
+    margin: 12px;
+
+    border-style: double;
+    border-color: #EADC15;
+    border-width: 8px;
+    border-radius: 8px;
 }
 
 .buttons {
@@ -48,6 +55,11 @@ body {
 .playarea #playerChoice {
     flex-grow: 0;
     flex-shrink: 0;
+
+    background-color: #E7C118;
+    padding: 16px;
+    border-radius: 32px;
+    border-width: 0px;
 }
 .playarea #outcome {
     flex-grow: 1;
