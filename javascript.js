@@ -4,7 +4,8 @@ const outcomePar = document.querySelector('#outcome');
 
 
 // Play a round when a button is clicked, with the appropriate player choice.
-for (let button of document.querySelectorAll('button')) {
+const buttons = document.querySelectorAll('.buttons button');
+for (let button of buttons) {
     button.addEventListener('click', () => playRound(button.id));
 }
 
@@ -54,4 +55,44 @@ function playRound(playerChoice) {
     if (playerChoice == computerChoice) {
         outcomePar.textContent = 'It\'s a draw!';
     }
+
+    if (playerScore + computerScore == 5)
+        endGame();
+}
+
+function endGame() {
+    const winnerArea = document.querySelector('.winner-box');
+    const p = document.createElement('p');
+    const button = document.createElement('button');
+    button.addEventListener('click', resetGame);
+    const buttonImage = document.createElement('img');
+    buttonImage.src = 'img/replay.gif';
+    button.appendChild(buttonImage);
+
+    if (playerScore > computerScore)
+        p.textContent = 'PLAYER WINS';
+    if (playerScore < computerScore)
+        p.textContent = 'COMPUTER WINS';
+    if (playerScore == computerScore)
+        p.textContent = 'DRAW';
+
+    
+    for (let button of buttons) {
+        button.disabled = true;
+    }
+
+    winnerArea.appendChild(p);
+    winnerArea.appendChild(button);
+
+}
+
+function resetGame() {
+    computerScore = 0;
+    playerScore = 0;
+    
+    const winnerArea = document.querySelector('.winner-box');
+    while (winnerArea.lastChild)
+        winnerArea.removeChild(winnerArea.lastChild);
+    for (let button of buttons)
+        button.disabled = false;
 }

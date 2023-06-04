@@ -16,10 +16,25 @@ body {
 }
 
 .winner-box {
-    min-height: 100px;
-    background: green;
+    display: flex;
+
+    min-height: 134px;
     padding: 24px;
     margin: 12px;
+}
+
+.winner-box p {
+    padding: 0 72px;
+    font-size: 32px;
+    flex: 1;
+    margin: auto 0;
+}
+
+.winner-box button {
+    flex: 0;
+    background-color: #e2ce1d;
+    border: none;
+    border-radius: 12px;
 }
 
 .playarea {
