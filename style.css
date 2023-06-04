@@ -1,0 +1,41 @@
+.container {
+    width: 800px;
+    margin: auto;
+    
+    background: red;
+}
+
+.winner-box {
+    min-height: 100px;
+    background: green;
+}
+
+.playarea {
+    min-height: 100px;
+    background: yellow;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    background: blue;
+}
+
+button {
+    width: 150px;
+    height: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    padding: 12px;
+    margin: 12px;
+}
+
+button img {
+    width: 128px;
+    height: 128px;
+}
+
+button p {
+    margin: 0;
+}
