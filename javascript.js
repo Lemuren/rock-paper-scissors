@@ -86,11 +86,17 @@ function endGame() {
 
 }
 
+
+
 function resetGame() {
     computerScore = 0;
     playerScore = 0;
     
     const winnerArea = document.querySelector('.winner-box');
+    const playArea = document.querySelector('#outcome');
+    document.querySelector("#playerChoice").src = 'img/nochoice.gif';
+    document.querySelector("#computerChoice").src = 'img/nochoice.gif';
+    playArea.textContent = '';
     while (winnerArea.lastChild)
         winnerArea.removeChild(winnerArea.lastChild);
     for (let button of buttons)
